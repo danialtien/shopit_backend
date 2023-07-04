@@ -3,6 +3,7 @@ E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\mo
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\repository\OrderdetailRepository.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\CategoryDTO.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\OrdersDTO.java
+E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\controller\ProductController.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\services\impl\PaymentServiceImpl.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\CustomerDTO.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\entity\Shop.java
@@ -17,6 +18,7 @@ E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\mo
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\repository\ProductRepository.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\repository\CustomerRepository.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\OrderdetailDTO.java
+E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\controller\CategoryController.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\ProductDTO.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\ShopDTO.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\services\impl\CategoryServiceImpl.java

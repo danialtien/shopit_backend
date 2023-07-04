@@ -28,6 +28,9 @@ public class Customer  implements Serializable {
     @Column(name = "phone")
     private String phone;
 
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "avatar")
     private String avatar;
 

@@ -4,6 +4,8 @@ import com.danialtien.shopit.model.entity.Notification;
 import com.danialtien.shopit.repository.NotificationRepository;
 import com.danialtien.shopit.services.GeneralService;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Service
 @Transactional
+@AllArgsConstructor
+@NoArgsConstructor
 public class NotificationServiceImpl implements GeneralService<Notification> {
 
     @Autowired
@@ -31,7 +35,7 @@ public class NotificationServiceImpl implements GeneralService<Notification> {
     }
 
     @Override
-    public Notification update(Notification object) {
+    public Notification update(int id, Notification object) {
         return null;
     }
 

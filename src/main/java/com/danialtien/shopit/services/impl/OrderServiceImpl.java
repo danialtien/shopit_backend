@@ -4,6 +4,8 @@ import com.danialtien.shopit.model.entity.Orders;
 import com.danialtien.shopit.repository.OrdersRepository;
 import com.danialtien.shopit.services.GeneralService;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Service
 @Transactional
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderServiceImpl implements GeneralService<Orders> {
 
     @Autowired
@@ -31,7 +35,7 @@ public class OrderServiceImpl implements GeneralService<Orders> {
     }
 
     @Override
-    public Orders update(Orders object) {
+    public Orders update(int id, Orders object) {
         return null;
     }
 

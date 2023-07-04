@@ -4,6 +4,8 @@ import com.danialtien.shopit.model.entity.Shop;
 import com.danialtien.shopit.repository.ShopRepository;
 import com.danialtien.shopit.services.GeneralService;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Service
 @Transactional
+@AllArgsConstructor
+@NoArgsConstructor
 public class ShopServiceImpl implements GeneralService<Shop> {
 
     @Autowired
@@ -31,7 +35,7 @@ public class ShopServiceImpl implements GeneralService<Shop> {
     }
 
     @Override
-    public Shop update(Shop object) {
+    public Shop update(int id, Shop object) {
         return null;
     }
 

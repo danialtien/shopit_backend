@@ -4,6 +4,8 @@ import com.danialtien.shopit.model.entity.Payment;
 import com.danialtien.shopit.repository.PaymentRepository;
 import com.danialtien.shopit.services.GeneralService;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Service
 @Transactional
+@AllArgsConstructor
+@NoArgsConstructor
 public class PaymentServiceImpl implements GeneralService<Payment> {
 
     @Autowired
@@ -31,7 +35,7 @@ public class PaymentServiceImpl implements GeneralService<Payment> {
     }
 
     @Override
-    public Payment update(Payment object) {
+    public Payment update(int id, Payment object) {
         return null;
     }
 

@@ -4,6 +4,8 @@ import com.danialtien.shopit.model.entity.Category;
 import com.danialtien.shopit.repository.CategoryRepository;
 import com.danialtien.shopit.services.GeneralService;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Service
 @Transactional
+@AllArgsConstructor
+@NoArgsConstructor
 public class CategoryServiceImpl implements GeneralService<Category> {
 
     @Autowired
@@ -32,7 +36,7 @@ public class CategoryServiceImpl implements GeneralService<Category> {
     }
 
     @Override
-    public Category update(Category object) {
+    public Category update(int id, Category object) {
         return null;
     }
 

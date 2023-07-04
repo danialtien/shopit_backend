@@ -11,6 +11,7 @@ CREATE TABLE customer (
     full_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     phone VARCHAR(20),
+    password VARCHAR(20),
     avatar VARCHAR(255),
     address VARCHAR(255),
     created_at DATETIME,
@@ -104,9 +105,9 @@ INSERT INTO product (category_id, product_name, status, unit_in_stock, unit_pric
     (4, 'Asus Laptop', true, 15, 1400.00, 'https://example.com/image5.jpg', 'Description for Asus Laptop');
 
 -- Insert sample data for customer, notification, order, and payment tables
-INSERT INTO customer (full_name, email, phone, avatar, address, created_at, status) VALUES
-    ('John Doe', 'john.doe@example.com', '123456789', '', '123 Main St', NOW(), true),
-    ('Jane Smith', 'jane.smith@example.com', '987654321', '', '456 Elm St', NOW(), true);
+INSERT INTO customer (full_name, email, phone, password, avatar, address, created_at, status) VALUES
+    ('John Doe', 'john.doe@example.com', '123456789', '12345', '', '123 Main St', NOW(), true),
+    ('Jane Smith', 'jane.smith@example.com', '987654321', '12345', '', '456 Elm St', NOW(), true);
 
 INSERT INTO notification (customer_id, title, description, created_at) VALUES
     (1, 'Notification 1', 'Description for Notification 1', NOW()),

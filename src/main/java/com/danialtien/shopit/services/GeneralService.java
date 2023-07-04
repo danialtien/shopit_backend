@@ -13,7 +13,7 @@ public interface GeneralService<T> {
 
     T getById(int id);
 
-    T update(T object);
+    T update(int id, T object);
 
     void remove(T object);
 
