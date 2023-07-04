@@ -4,6 +4,7 @@ import com.danialtien.shopit.model.entity.Shop;
 import com.danialtien.shopit.repository.ShopRepository;
 import com.danialtien.shopit.services.GeneralService;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.List;
 @Service
 @Transactional
 public class ShopServiceImpl implements GeneralService<Shop> {
+
+    @Autowired
     private ShopRepository repository;
     @Override
     public List<Shop> getAll() {
