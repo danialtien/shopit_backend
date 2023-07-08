@@ -1,8 +1,6 @@
 package com.danialtien.shopit.controller;
 
-import com.danialtien.shopit.model.entity.Customer;
 import com.danialtien.shopit.model.entity.Product;
-import com.danialtien.shopit.services.impl.CustomerServiceImpl;
 import com.danialtien.shopit.services.impl.ProductServiceImpl;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +47,21 @@ public class ProductController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @PutMapping("/")
+    @ApiOperation( value = "Update Product", response = Product.class )
+    public ResponseEntity<Product> updateCustomer(@PathVariable Integer id, @RequestBody Product dto) {
+        Product reponse = service.update(id, dto);
+        if(reponse != null){
+            return new ResponseEntity<>(reponse, HttpStatus.OK);
+        }
 
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
+    @DeleteMapping("/")
+    @ApiOperation( value = "Delete Product" )
+    public ResponseEntity<HttpStatus> deleteCustomer(@PathVariable Integer id) {
+        service.removeByID(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

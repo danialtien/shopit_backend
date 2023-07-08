@@ -1,11 +1,8 @@
 package com.danialtien.shopit.controller;
 
-
-
 import com.danialtien.shopit.model.entity.Customer;
 import com.danialtien.shopit.services.impl.CustomerServiceImpl;
 import io.swagger.annotations.ApiOperation;
-import org.aspectj.lang.annotation.control.CodeGenerationHint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,7 +39,7 @@ public class CustomerController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @RequestMapping( value = "/{id}", method = RequestMethod.GET )
+    @RequestMapping( value = "/", method = RequestMethod.GET )
     @ApiOperation( value = "get customer Details By Id", response = Customer.class )
     public ResponseEntity<List<Customer>> getCustomer(@RequestParam("id") int id) {
         Customer customer = service.getById(id);
@@ -52,7 +49,7 @@ public class CustomerController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/")
     @ApiOperation( value = "Update customer", response = Customer.class )
     public ResponseEntity<Customer> updateCustomer(@PathVariable Integer customerId, @RequestBody Customer updatedCustomer) {
         Customer reponse = service.update(customerId, updatedCustomer);
@@ -63,11 +60,4 @@ public class CustomerController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PatchMapping("/{id}")
-    public ResponseEntity<String> partialUpdateCustomer(@PathVariable Integer customerId, @RequestBody Map<String, Object> updatedFields) {
-        // Logic to partially update the customer based on the provided ID and the updatedFields map
-        // ...
-
-        return ResponseEntity.ok("Customer partially updated successfully");
-    }
 }

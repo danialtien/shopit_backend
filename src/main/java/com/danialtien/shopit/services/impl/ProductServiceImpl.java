@@ -1,5 +1,6 @@
 package com.danialtien.shopit.services.impl;
 
+import com.danialtien.shopit.model.entity.Customer;
 import com.danialtien.shopit.model.entity.Product;
 import com.danialtien.shopit.repository.CategoryRepository;
 import com.danialtien.shopit.repository.ProductRepository;
@@ -44,12 +45,27 @@ public class ProductServiceImpl implements GeneralService<Product> {
 
     @Override
     public Product update(int id, Product object) {
+        Product dto = repository.getReferenceById(id);
+        if(dto != null){
+            dto.setCategoryId(object.getCategoryId());
+            dto.setDescription(object.getDescription());
+            dto.setUrlImage(object.getUrlImage());
+            dto.setProductName(object.getProductName());
+            dto.setUnitPrice(object.getUnitPrice());
+            dto.setUnitInStock(object.getUnitInStock());
+            dto.setProductName(object.getProductName());
+            return dto;
+        }
         return null;
     }
 
     @Override
     public void remove(Product object) {
-        repository.delete(object);
+
+    }
+
+    public void removeByID(Integer id) {
+        repository.delete(repository.getReferenceById(id));
     }
 
     public List<Product> getByCategoryId(int id) {

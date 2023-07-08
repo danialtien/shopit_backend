@@ -43,7 +43,7 @@ public class CategoryController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @RequestMapping( value = "/id", method = RequestMethod.GET )
+    @RequestMapping( value = "/", method = RequestMethod.GET )
     @ApiOperation( value = "Get Category Details By Id", response = Category.class )
     public ResponseEntity<List<Category>> getCategory(@RequestParam("id") int id) {
         Category response = service.getById(id);
@@ -53,7 +53,7 @@ public class CategoryController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @RequestMapping( value = "/{id}/products", method = RequestMethod.GET )
+    @RequestMapping( value = "/products", method = RequestMethod.GET )
     @ApiOperation( value = "get all product by Category ID", response = Category.class, responseContainer = "List" )
     public ResponseEntity<List<Product>> getAllProductByCategoryID(@RequestParam("id") int categoryId) {
         List<Product> responses = productService.getByCategoryId(categoryId);
