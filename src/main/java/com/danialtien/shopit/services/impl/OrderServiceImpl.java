@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -42,5 +43,18 @@ public class OrderServiceImpl implements GeneralService<Orders> {
     @Override
     public void remove(Orders object) {
         repository.delete(object);
+    }
+    public List<Orders> getOrderByCustomerId(int customerId) {
+        List<Orders> listOrders = new ArrayList<>();
+        for (Orders orders : repository.findAll()) {
+            if (orders.getCustomerId() == customerId) {
+                listOrders.add(orders);
+            }
+        }
+        return listOrders;
+    }
+
+    public void removeById(int id) {
+        repository.delete(repository.getReferenceById(id));
     }
 }

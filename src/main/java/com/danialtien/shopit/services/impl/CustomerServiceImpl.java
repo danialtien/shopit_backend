@@ -55,4 +55,12 @@ public class CustomerServiceImpl implements GeneralService<Customer> {
     public void remove(Customer object) {
         repository.delete(object);
     }
+    public Customer softRemove(Integer customerId) {
+        Customer customer = repository.getReferenceById(customerId);
+        if (customer != null) {
+            customer.setStatus(false);
+            return customer;
+        }
+        return null;
+    }
 }

@@ -59,5 +59,13 @@ public class CustomerController {
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
+    @PutMapping("/remove")
+    @ApiOperation( value = "Remove customer", response = Customer.class )
+    public ResponseEntity<Customer> deleteCustomer(@PathVariable Integer customerId) {
+        Customer reponse = service.softRemove(customerId);
+        if(reponse != null){
+            return new ResponseEntity<>(reponse, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -42,5 +43,15 @@ public class PaymentServiceImpl implements GeneralService<Payment> {
     @Override
     public void remove(Payment object) {
         repository.delete(object);
+    }
+
+    public List<Payment> getByOrderId(int orderId) {
+        List<Payment> lists = new ArrayList<>();
+        for (Payment payment : repository.findAll()) {
+            if (payment.getOrderId() == orderId) {
+                lists.add(payment);
+            }
+        }
+        return lists;
     }
 }
