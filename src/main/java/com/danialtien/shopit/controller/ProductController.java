@@ -39,7 +39,7 @@ public class ProductController {
 
     @RequestMapping( value = "/", method = RequestMethod.GET )
     @ApiOperation( value = "Get Product Details By Id", response = Product.class )
-    public ResponseEntity<List<Product>> getCustomer(@RequestParam("id") int id) {
+    public ResponseEntity<List<Product>> getProduct(@RequestParam("id") int id) {
         Product response = service.getById(id);
         if ( response != null ) {
             return new ResponseEntity(response, HttpStatus.OK);
@@ -49,7 +49,7 @@ public class ProductController {
 
     @PutMapping("/")
     @ApiOperation( value = "Update Product", response = Product.class )
-    public ResponseEntity<Product> updateCustomer(@PathVariable Integer id, @RequestBody Product dto) {
+    public ResponseEntity<Product> updateCustomer(@RequestParam("id") int id, @RequestBody Product dto) {
         Product reponse = service.update(id, dto);
         if(reponse != null){
             return new ResponseEntity<>(reponse, HttpStatus.OK);
@@ -60,7 +60,7 @@ public class ProductController {
 
     @DeleteMapping("/")
     @ApiOperation( value = "Delete Product" )
-    public ResponseEntity<HttpStatus> deleteCustomer(@PathVariable Integer id) {
+    public ResponseEntity<HttpStatus> deleteCustomer(@RequestParam("id") int id) {
         service.removeByID(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
