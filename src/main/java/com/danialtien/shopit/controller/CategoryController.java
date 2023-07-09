@@ -1,6 +1,7 @@
 package com.danialtien.shopit.controller;
 
 import com.danialtien.shopit.model.entity.Category;
+import com.danialtien.shopit.model.entity.Customer;
 import com.danialtien.shopit.model.entity.Product;
 import com.danialtien.shopit.services.impl.CategoryServiceImpl;
 import com.danialtien.shopit.services.impl.ProductServiceImpl;
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/category")
 public class CategoryController {
+
     @Autowired
     private final CategoryServiceImpl service;
 
@@ -62,4 +64,15 @@ public class CategoryController {
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @PutMapping("/")
+    @ApiOperation( value = "Update category", response = Category.class )
+    public ResponseEntity<Category> updateCustomer(@RequestParam("id") Integer id, @RequestBody Category object) {
+        Category reponse = service.update(id, object);
+        if(reponse != null){
+            return new ResponseEntity<>(reponse, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 }

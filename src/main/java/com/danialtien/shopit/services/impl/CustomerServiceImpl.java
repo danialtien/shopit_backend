@@ -63,4 +63,15 @@ public class CustomerServiceImpl implements GeneralService<Customer> {
         }
         return null;
     }
+
+    public Customer login(String email, String password){
+        return repository.findByEmailAndPassword(email, password);
+    }
+
+    public Customer register(String email, String password) {
+        Customer customer = new Customer();
+        customer.setEmail(email);
+        customer.setPassword(password);
+        return repository.save(customer);
+    }
 }

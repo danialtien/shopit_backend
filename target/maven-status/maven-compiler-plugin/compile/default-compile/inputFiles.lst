@@ -19,11 +19,13 @@ E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\mo
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\repository\ProductRepository.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\controller\OrderController.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\repository\CustomerRepository.java
+E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\UserLogin.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\OrderdetailDTO.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\controller\CategoryController.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\controller\PaymentController.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\ProductDTO.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\model\dto\ShopDTO.java
+E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\controller\AuthController.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\services\impl\CategoryServiceImpl.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\controller\CustomerController.java
 E:\2023_Sum_Ky7\PRM\ShopIT_Backend\ShopIT\src\main\java\com\danialtien\shopit\ShopItApplication.java

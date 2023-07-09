@@ -51,7 +51,7 @@ public class CustomerController {
 
     @PutMapping("/")
     @ApiOperation( value = "Update customer", response = Customer.class )
-    public ResponseEntity<Customer> updateCustomer(@PathVariable Integer customerId, @RequestBody Customer updatedCustomer) {
+    public ResponseEntity<Customer> updateCustomer(@RequestParam("id") Integer customerId, @RequestBody Customer updatedCustomer) {
         Customer reponse = service.update(customerId, updatedCustomer);
         if(reponse != null){
             return new ResponseEntity<>(reponse, HttpStatus.OK);
@@ -61,7 +61,7 @@ public class CustomerController {
     }
     @PutMapping("/remove")
     @ApiOperation( value = "Remove customer", response = Customer.class )
-    public ResponseEntity<Customer> deleteCustomer(@PathVariable Integer customerId) {
+    public ResponseEntity<Customer> deleteCustomer(@RequestParam("id") Integer customerId) {
         Customer reponse = service.softRemove(customerId);
         if(reponse != null){
             return new ResponseEntity<>(reponse, HttpStatus.OK);
