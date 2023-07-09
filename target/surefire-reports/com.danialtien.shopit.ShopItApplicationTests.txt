@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.danialtien.shopit.ShopItApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.788 s - in com.danialtien.shopit.ShopItApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.956 s - in com.danialtien.shopit.ShopItApplicationTests
