@@ -1,5 +1,6 @@
 package com.danialtien.shopit.controller;
 
+import com.danialtien.shopit.model.dto.UserLogin;
 import com.danialtien.shopit.model.entity.Customer;
 import com.danialtien.shopit.services.impl.CustomerServiceImpl;
 import io.swagger.annotations.ApiOperation;
@@ -28,6 +29,7 @@ public class CustomerController {
         Customer publisherResponse = service.add(customer);
         return new ResponseEntity<>(publisherResponse, HttpStatus.CREATED);
     }
+
 
     @RequestMapping( value = "/all", method = RequestMethod.GET )
     @ApiOperation( value = "get all customers", response = Customer.class, responseContainer = "List" )

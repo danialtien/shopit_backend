@@ -1,5 +1,7 @@
 package com.danialtien.shopit.services.impl;
 
+import com.danialtien.shopit.model.dto.CustomerDTO;
+import com.danialtien.shopit.model.dto.UserLogin;
 import com.danialtien.shopit.model.entity.Customer;
 import com.danialtien.shopit.repository.CustomerRepository;
 import com.danialtien.shopit.services.GeneralService;
@@ -72,6 +74,7 @@ public class CustomerServiceImpl implements GeneralService<Customer> {
         Customer customer = new Customer();
         customer.setEmail(email);
         customer.setPassword(password);
+        customer.setFullName(email);
         return repository.save(customer);
     }
 }
