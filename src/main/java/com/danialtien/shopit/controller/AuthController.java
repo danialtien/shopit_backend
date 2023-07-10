@@ -2,6 +2,7 @@ package com.danialtien.shopit.controller;
 
 
 import com.danialtien.shopit.model.dto.UserLogin;
+import com.danialtien.shopit.model.dto.UserRegister;
 import com.danialtien.shopit.model.entity.Customer;
 import com.danialtien.shopit.services.impl.CustomerServiceImpl;
 import lombok.AllArgsConstructor;
@@ -36,10 +37,8 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<Customer> register(@RequestBody UserLogin loginRequest) {
-        String email = loginRequest.getEmail();
-        String password = loginRequest.getPassword();
-        Customer customer = service.register(email, password);
+    public ResponseEntity<Customer> register(@RequestBody UserRegister loginRequest) {
+        Customer customer = service.register(loginRequest);
         if (customer != null) {
             // Successful authentication
             return ResponseEntity.ok().body(customer);

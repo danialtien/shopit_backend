@@ -2,12 +2,14 @@ package com.danialtien.shopit.services.impl;
 
 import com.danialtien.shopit.model.dto.CustomerDTO;
 import com.danialtien.shopit.model.dto.UserLogin;
+import com.danialtien.shopit.model.dto.UserRegister;
 import com.danialtien.shopit.model.entity.Customer;
 import com.danialtien.shopit.repository.CustomerRepository;
 import com.danialtien.shopit.services.GeneralService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,11 +72,11 @@ public class CustomerServiceImpl implements GeneralService<Customer> {
         return repository.findByEmailAndPassword(email, password);
     }
 
-    public Customer register(String email, String password) {
+    public Customer register(UserRegister loginUser) {
         Customer customer = new Customer();
-        customer.setEmail(email);
-        customer.setPassword(password);
-        customer.setFullName(email);
+        customer.setEmail(loginUser.getEmail());
+        customer.setPassword(loginUser.getPassword());
+        customer.setFullName(loginUser.getFullName());
         return repository.save(customer);
     }
 }
