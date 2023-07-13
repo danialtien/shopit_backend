@@ -107,7 +107,8 @@ INSERT INTO product (category_id, product_name, status, unit_in_stock, unit_pric
 -- Insert sample data for customer, notification, order, and payment tables
 INSERT INTO customer (full_name, email, phone, password, avatar, address, created_at, status) VALUES
     ('John Doe', 'john.doe@example.com', '123456789', '12345', '', '123 Main St', NOW(), true),
-    ('Jane Smith', 'jane.smith@example.com', '987654321', '12345', '', '456 Elm St', NOW(), true);
+    ('Manh Tien', 'tien@gmail.com', '123456789', '12345', '', '123 Main St', NOW(), true),
+    ('Jane Smith', 'demo@demo.com', '987654321', '123456', '', '456 Elm St', NOW(), true);
 
 INSERT INTO notification (customer_id, title, description, created_at) VALUES
     (1, 'Notification 1', 'Description for Notification 1', NOW()),
@@ -122,4 +123,3 @@ INSERT INTO payment (order_id, payment_date, amount, payment_method) VALUES
     (2, '2023-02-03', 1800.00, 'Cash');
     
 -- ALTER TABLE customer CHANGE createdAt created_at DATETIME;
-
