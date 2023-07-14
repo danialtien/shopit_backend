@@ -41,5 +41,4 @@ public class Customer  implements Serializable {
 
     @Column(name = "status")
     private boolean status;
-
 }
