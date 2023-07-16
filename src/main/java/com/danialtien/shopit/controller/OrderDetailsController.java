@@ -5,13 +5,13 @@ import com.danialtien.shopit.model.entity.Orders;
 import com.danialtien.shopit.model.entity.Product;
 import com.danialtien.shopit.services.impl.OrderDetailServiceImpl;
 import io.swagger.annotations.ApiOperation;
-import jakarta.persistence.criteria.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/order_details")
@@ -31,9 +31,9 @@ public class OrderDetailsController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     @RequestMapping(value = "/getOrderDetailsByOrderId", method = RequestMethod.GET)
-    @ApiOperation(value = "Get Order Details By Order ID", response = OrderDetail.class)
+    @ApiOperation(value = "Get Order Details By Order ID", response = Product.class)
     public ResponseEntity<List<OrderDetail>> getOrderDetailsByOrderId(@RequestParam("orderId") int orderId) {
-        List<OrderDetail> orderDetails = orderDetailService.getByOrderId(orderId);
+        List<OrderDetail> orderDetails = orderDetailService.getAllOrderDetailByOrderId(orderId);
         if (!orderDetails.isEmpty()) {
             return new ResponseEntity<>(orderDetails, HttpStatus.OK);
         }
@@ -46,11 +46,11 @@ public class OrderDetailsController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
     @PutMapping("/")
-    @ApiOperation( value = "Update Product", response = Product.class )
+    @ApiOperation( value = "Update Order detail", response = OrderDetail.class )
     public ResponseEntity<OrderDetail> updateCustomer(@RequestParam("id") int id, @RequestBody OrderDetail dto) {
-        OrderDetail response = orderDetailService.update(id, dto);
-        if(response != null){
-            return new ResponseEntity<>(response, HttpStatus.OK);
+        Optional<OrderDetail> response = orderDetailService.updateDetail(id, dto);
+        if(response.get() != null){
+            return new ResponseEntity<>(response.get(), HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

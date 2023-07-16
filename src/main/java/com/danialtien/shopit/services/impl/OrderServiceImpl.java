@@ -44,14 +44,16 @@ public class OrderServiceImpl implements GeneralService<Orders> {
     public void remove(Orders object) {
         repository.delete(object);
     }
-    public List<Orders> getOrderByCustomerId(int customerId) {
+    public Orders getOrderByCustomerId(int customerId) {
         List<Orders> listOrders = new ArrayList<>();
         for (Orders orders : repository.findAll()) {
             if (orders.getCustomerId() == customerId) {
                 listOrders.add(orders);
             }
         }
-        return listOrders;
+        Orders orders = null;
+        orders = (Orders) listOrders.stream().filter(x -> x.getStatus().equals("Pending"));
+        return orders;
     }
 
     public void removeById(int id) {

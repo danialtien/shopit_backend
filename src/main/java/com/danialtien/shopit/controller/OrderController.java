@@ -44,9 +44,9 @@ public class OrderController {
     }
     @RequestMapping(value = "/getOrdersByCustomerId", method = RequestMethod.GET)
     @ApiOperation(value = "Get Orders By Customer Id", response = List.class)
-    public ResponseEntity<List<Orders>> getOrdersByCustomerId(@RequestParam("customerId") int customerId) {
-        List<Orders> response = orderService.getOrderByCustomerId(customerId);
-        if (!response.isEmpty()) {
+    public ResponseEntity<Orders> getOrdersByCustomerId(@RequestParam("customerId") int customerId) {
+        Orders response = orderService.getOrderByCustomerId(customerId);
+        if (response != null) {
             return new ResponseEntity<>(response, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
