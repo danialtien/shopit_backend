@@ -52,7 +52,10 @@ public class OrderServiceImpl implements GeneralService<Orders> {
             }
         }
         Orders orders = null;
-        orders = (Orders) listOrders.stream().filter(x -> x.getStatus().equals("Pending"));
+        listOrders = listOrders.stream().filter(x -> x.getStatus().equals("Pending")).toList();
+        if (listOrders.size() >= 1) {
+            orders = listOrders.get(0);
+        }
         return orders;
     }
 

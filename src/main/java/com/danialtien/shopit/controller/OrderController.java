@@ -43,7 +43,7 @@ public class OrderController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
     @RequestMapping(value = "/getOrdersByCustomerId", method = RequestMethod.GET)
-    @ApiOperation(value = "Get Orders By Customer Id", response = List.class)
+    @ApiOperation(value = "Get Orders By Customer Id", response = Orders.class)
     public ResponseEntity<Orders> getOrdersByCustomerId(@RequestParam("customerId") int customerId) {
         Orders response = orderService.getOrderByCustomerId(customerId);
         if (response != null) {
