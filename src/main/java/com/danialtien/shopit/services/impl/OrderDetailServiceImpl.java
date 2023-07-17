@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,9 +52,9 @@ public class OrderDetailServiceImpl implements GeneralService<OrderDetail> {
                 repository.delete(object);
                 return null;
             }
-            details.get().setTotal(object.getTotal());
-            details.get().setPrice(object.getPrice());
+
             details.get().setQuantity(object.getQuantity());
+            details.get().setTotal(new BigDecimal(details.get().getQuantity()).multiply( details.get().getPrice()));
         }
         return details;
     }

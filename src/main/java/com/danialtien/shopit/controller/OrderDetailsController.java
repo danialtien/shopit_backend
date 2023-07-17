@@ -45,11 +45,11 @@ public class OrderDetailsController {
         OrderDetail response = orderDetailService.add(orderDetail);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
-    @PutMapping("/")
+    @PutMapping("/update")
     @ApiOperation( value = "Update Order detail", response = OrderDetail.class )
-    public ResponseEntity<OrderDetail> updateCustomer(@RequestParam("id") int id, @RequestBody OrderDetail dto) {
+    public ResponseEntity<OrderDetail> updateOrderDetail(@RequestParam("id") int id, @RequestBody OrderDetail dto) {
         Optional<OrderDetail> response = orderDetailService.updateDetail(id, dto);
-        if(response.get() != null){
+        if(response.get() != null && response != null){
             return new ResponseEntity<>(response.get(), HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
