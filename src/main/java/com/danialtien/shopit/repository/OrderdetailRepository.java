@@ -12,4 +12,6 @@ import java.util.List;
 public interface OrderdetailRepository extends JpaRepository<OrderDetail, Integer> {
 
     List<OrderDetail> getByOrderId(int id);
+
+    OrderDetail findFirstByOrderId(int id);
 }

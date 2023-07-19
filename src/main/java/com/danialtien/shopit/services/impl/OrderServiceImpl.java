@@ -32,7 +32,7 @@ public class OrderServiceImpl implements GeneralService<Orders> {
 
     @Override
     public Orders getById(int id) {
-        return repository.getReferenceById(id);
+        return repository.findById(id).get();
     }
 
     @Override
