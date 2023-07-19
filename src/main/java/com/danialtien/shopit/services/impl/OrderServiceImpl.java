@@ -37,7 +37,11 @@ public class OrderServiceImpl implements GeneralService<Orders> {
 
     @Override
     public Orders update(int id, Orders object) {
-        return null;
+        Orders order = repository.findById(id).get();
+        order.setStatus(object.getStatus());
+        order.setTotalPrice(object.getTotalPrice());
+        order.setShippingAddress(object.getShippingAddress());
+        return order;
     }
 
     @Override

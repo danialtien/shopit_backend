@@ -51,7 +51,7 @@ public class OrderController {
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-    @PutMapping("/")
+    @PutMapping("")
     @ApiOperation( value = "Update Order", response = Orders.class)
     public ResponseEntity<Orders> updateOrder(@RequestParam("id") int id, @RequestBody Orders dto) {
         Orders response = orderService.update(id, dto);
